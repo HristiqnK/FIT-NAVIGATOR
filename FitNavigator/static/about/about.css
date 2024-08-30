@@ -1,0 +1,52 @@
+h2 {
+    font-size: 25px;
+}
+
+main section a {
+    color: #FF6B00;
+}
+
+main section:first-child {
+    margin: 160px 40px 0;
+}
+
+main section {
+    margin: 20px 40px;
+}
+
+main section ul, section ol {
+    margin-left: 20px;
+}
+
+main #important {
+    border: 2px solid #aa4123;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: 90%;
+    background-color: #FF6B00;
+}
+
+main #important p {
+    margin: 10px 0 10px 5px;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    main section:first-child {
+        margin: 10px;
+    }
+
+    main section {
+        margin: 10px;
+    }
+    
+    main section ul, section ol {
+        margin-left: 20px;
+    }
+    
+    main #important p {
+        margin: 5px;
+    }
+}

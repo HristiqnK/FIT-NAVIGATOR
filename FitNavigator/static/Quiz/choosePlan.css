@@ -1,0 +1,116 @@
+main .form {
+    height: calc(100vh - 80px);
+}
+
+main .video-background {
+    position: absolute;
+    filter: brightness(1.3) ;
+    width: auto;
+    height: calc(100vh - 80px);
+    z-index: -1;
+}
+
+main .questions {
+    display: flex;
+    background-color: #000000be;
+    height: calc(100vh - 80px);
+    width: 70%;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+main form .questions > * {
+    flex: 1;
+}
+
+main form .questions .heading {
+    font-size: 30px;
+    flex: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+main form .questions .question {
+    margin-left: 40px;
+}
+
+main form .question a {
+    color: #FF6B00;
+}
+
+main form label {
+    font-size: 23px;
+    cursor: pointer;
+}
+
+main form input {
+    cursor: pointer;
+}
+
+main form #submit {
+    width: 290px;
+    height: 40px;
+
+    background-color: #FF6B00;
+    border: none;
+    border-radius: 5px;
+
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 25px;
+    letter-spacing:2px;
+    cursor: pointer;
+    margin-top: 15px;
+    flex: none;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    main form .questions .heading {
+        width: 70%;
+        font-size: 27px;
+        margin: 30px auto 10px auto;
+    }
+
+    main form #submit {
+        width: 200px;
+        height: 40px;
+    }
+
+    
+    main form .questions {
+        /* height: 100vh;  */
+        height: max-content;
+    }
+
+    main form .question {
+        width: 300px;
+        left: 0;
+        margin: 10px 0;
+    }
+
+    main form {
+        margin: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    main .video-background {
+        display: none;
+    }
+
+    main .questions {
+        left:0;
+        width: 100%;
+    }
+
+    main .questions .heading {
+        font-size: 28px;
+    }
+
+    main form .question select {
+        width: 350px;
+    }
+}

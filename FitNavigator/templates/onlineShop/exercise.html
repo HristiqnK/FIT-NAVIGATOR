@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Магазин - ФитНавигатор</title>
+
+<link rel="stylesheet" href="{% static 'onlineShop/exercise.css' %}">
+<link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+
+<link rel="icon" type="image/x-icon" href="{% static 'basicFiles/favicon.png' %}">
+{% endblock head %}
+
+
+{% block main %}
+<div class="exercise-guide">
+    <div class="exercise-information">
+        <h2>Лицеви опори</h2>
+        <p>
+            Лицевата опора се изпълнява като тялото се спуска и повдига с ръце от легнало положение с лице към земята. <br> <br>
+            Основните мускули, които се натоварват, са гръдните мускули (pectoralis major), трицепсите и делтоидите.
+            <br> <br> Оптималният брой лицеви опори варира, но за повечето хора 3 серии по 10-15 повторения е добър старт.
+        </p>
+    </div>
+
+
+    <div class="exercise-video">
+        <!-- <iframe src="https://www.youtube.com/embed/vvW8SeVZ3XE" title="When Everyone In The Arena Hates You" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        <iframe src="https://www.youtube.com/embed/BbDcMfu-i4w" title="Home chest exercise: Push Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+{% endblock main %}

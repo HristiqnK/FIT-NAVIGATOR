@@ -1,0 +1,77 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Създаване на програма - Фит Навигатор</title>
+    <script src="{% static 'Quiz/dropdown.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+    <link rel="stylesheet" href="{% static 'Quiz/choosePlan.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'basicFiles/basic.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+{% endblock head %}
+
+{% block main %}
+<div class="form">
+    <video autoplay loop muted class="video-background">
+        <source src="{% static 'basicFiles/intro_section.mp4' %}" type="video/mp4">
+    </video>
+
+    <form method="post">
+        {% csrf_token %}
+        <span class="questions">
+            <h2 class="heading">Попълнете вашата информация:</h2>
+            <div class="question">
+                <p for="env">1. Kъде искате да тренирате?</p>
+                <input type="radio" name="env" id="env_gym" value="gym">
+                <label for="env_gym">Фитнес</label>
+                <input type="radio" name="env" id="env_home" value="home">
+                <label for="env_home">Навън/У дома</label>
+            </div>
+
+            <div class="question">
+                <p for="gender">2. Какъв е вашият пол?</p>
+                <input type="radio" name="gender" id="gender_male" value="male">
+                <label for="gender_male">Мъж</label>
+                <input type="radio" name="gender" id="gender_female" value="female">
+                <label for="gender_female">Жена</label>
+            </div>
+
+            <div class="question">
+                <p for="goals">3. Какви са вашите цели?</p>
+                <input type="radio" name="goals" id="goals_gainWeight" value="gainWeight">
+                <label for="goals_gainWeight">Покачване на мускулна маса</label>
+                <input type="radio" name="goals" id="goals_loseWeight" value="loseWeight">
+                <label for="goals_loseWeight">Загуба на излишни мазнини</label>
+            </div>
+
+            <div class="question">
+                <p for="time">4. Как бихте определили вашето ежедневие?</p>
+                <input type="radio" name="time" id="time_free" value="free">
+                <label for="time_free">Свободно</label>
+                <input type="radio" name="time" id="time_busy" value="busy">
+                <label for="time_busy">Натоварено</label>
+            </div>
+
+            <div class="question">
+                <p for="bodytype">5. Колко е вашият BMI? <a href="/bmi">BMI калкулатор</a></p>
+                <input type="radio" name="bodytype" id="bodytype_underweight" value="underweight">
+                <label for="bodytype_underweight">под 20</label>
+                <input type="radio" name="bodytype" id="bodytype_normal" value="normal">
+                <label for="bodytype_normal">под 25</label>
+                <input type="radio" name="bodytype" id="bodytype_overweight" value="overweight">
+                <label for="bodytype_overweight">над 25</label>
+            </div>
+
+            <input type="submit" value="Изпрати" id="submit">
+        </span>
+    </form>
+</div>
+{% endblock main %}
+
+

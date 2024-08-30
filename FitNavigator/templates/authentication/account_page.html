@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load static %}
+    
+{% block head %}
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+    <link rel="stylesheet" href="{% static 'authentication/profile.css' %}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Влизане - ФитНавигатор</title>
+{% endblock head %}
+
+
+{% block main %}
+
+    <div class="profile-stats">
+        <h3 class="greeting">Здравейте, {{username}}!</h3>
+        <div class="profile-info">
+
+            <div class="profile-email">
+                <p>Имейл:</p>
+                <input type="email" name="" id="" value="{{email}}" disabled>
+            </div>
+
+            <div class="profile-password">
+                <a href = "/signout"><input type="button" value="Излизане"></a>
+            </div>
+        </div>
+
+
+        <div class="profile-pic">
+            <img src="https://picsum.photos/1000/1000" alt="">
+            <p>{{username}}</p>
+        </div>
+    </div>
+
+    <div class="padding"></div>
+
+    <div class="saved-workouts">
+        <h3>Моите планове</h3>
+        <div class="saved-workout">
+            <img src="https://picsum.photos/330/180" alt="">
+            <h4>workout #1</h4>
+            <p>Създадена на 12.05.2025</p>
+            <span><!--⁝--> <i class='bx bx-trash-alt'></i></span>
+        </div>
+
+        <div class="saved-workout">
+            <img src="https://picsum.photos/330/180?blur" alt="">
+            <h4>workout #1</h4>
+            <p>Създадена на 12.05.2025</p>
+            <span><!--⁝--> <i class='bx bx-trash-alt'></i></span>
+        </div>
+
+        <div class="saved-workout">
+            <img src="https://picsum.photos/330/180?grayscale" alt="">
+            <h4>workout #1</h4>
+            <p>Създадена на 12.05.2025</p>
+            <span><!--⁝--> <i class='bx bx-trash-alt'></i></span>
+        </div>
+    </div>
+{% endblock main %}

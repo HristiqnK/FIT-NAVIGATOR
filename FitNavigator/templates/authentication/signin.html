@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'authentication/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Влизане - ФитНавигатор</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.png' %}">
+{% endblock head %}
+
+
+{% block main %}
+    <div class="login-frame">
+
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        {% endfor %}
+
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="frame">
+                <video autoplay loop muted>
+                    <source src="{% static 'basicFiles/intro_section.mp4' %}" type="video/mp4">
+                </video>
+        
+                <div class="registration-form">
+                    <h3>Влизане</h3>
+                    <input type="text" id="username" name="username" placeholder="Потребителско име"> <br>
+                    <input type="password" name="password" id="password" placeholder="Парола"> <i class="fa-regular fa-eye-low-vision"></i> <br>
+                    <input type="submit" value="Влизане">
+                </div>
+            </div>
+        </form>
+        <p class="authentication-switch"> Нямаш акаунт? <a href="/signup">Регистрация</a></p>
+    </div>
+{% endblock main %}

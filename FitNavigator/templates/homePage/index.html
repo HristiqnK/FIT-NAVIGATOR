@@ -1,0 +1,130 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Фит Навигатор</title>
+    <link rel="stylesheet" href="{% static 'homePage/index.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'basicFiles/favicon.png' %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="{% static 'homePage/flipping-cards.js' %}"></script>
+{% endblock head %}
+
+{% block header %}
+<section class="hero">
+    <video autoplay loop muted>
+        <source src="{% static 'basicFiles/intro_section.mp4' %}" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h2>
+            Фит Навигатор
+        </h2>
+        <p>
+            <i>
+                Тренировки за всяка цел или ниво на опит.
+            </i>
+        </p>
+
+
+        <a href="/fitNavigator">
+            <button class="btn1">Започни сега!</button>
+        </a>
+
+        <a href="/about">
+            <button class="btn2">Повече информация</button>
+        </a>
+
+    </div>
+    <span class="overlay"></span>
+</section>
+{% endblock header %}
+
+{% block main %}
+<div class="site-info">
+    <h2>Какво е Фит Навигатор?</h2>
+    <div class="general-info-containers">
+        
+        <div class="flipping-container first">
+            <div class="general-info-container">
+                <img src="{% static 'homePage/beggining.png' %}" alt="">
+                <span class="container-content">
+                    Ако здравето, добрата форма и визия са Ваш приоритет, Фит Навигатор е точно за Вас! Независимо дали сте напреднали или тепърва прохождате в света на спорта, това е Вашето място!
+                </span>
+            </div>
+        </div>
+        
+        <div class="flipping-container second">
+            <div class="general-info-container">
+                <img src="{% static 'homePage/excercises.png' %}" alt="">
+                <span class="container-content">
+                    Упражненията се подбират от специализиран софтуер. С негова помощ се изгражда индивидуален план, напълно съобразен с Вашите физически характеристики, възможности и мечтани цели.
+                </span>
+            </div>
+        </div>
+
+        <div class="flipping-container third">
+            <div class="general-info-container">
+                <img src="{% static 'homePage/diet.png' %}" alt="">
+                <span class="container-content">
+                    Фит Навигатор не предлага диети. Режимът на хранене е нещо строго индивидуално. Вместо това ние предлага най-добрите базови съвети и препоръки по отношение здравословен начин на хранене, предоставени от водещи специалисти по хранене и диетика.
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="faq">
+    <h2>Често задавани въпроси:</h2>
+
+    <div class="wrapper">
+        <div class="faq-question">
+            <h2>
+                Къде мога да тренирам?
+            </h2>
+            <button class="btn"><i class='bx bx-chevron-down'></i></button>
+        </div>
+
+        <div class="faq-answer">
+            <p>
+                Нашият уебсайт предлага широк набор от програми, който включва възможност за тренировки с и без оборудване.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+            <div class="faq-question">
+                <h2>
+                    Кога мога да тренирам?
+                </h2>
+                <button class="btn"><i class='bx bx-chevron-down'></i></button>
+            </div>
+    
+            <div class="faq-answer">
+                <p>
+                    Времето и честотата на тренировките е изцяло Ваш избор, базиран на личните ви предпочитания и ниво на заетост. Ние предлагаме програми с висока и ниска интензивност.
+                </p>
+            </div>
+    </div>
+</section>
+
+<section class="calculators">
+    <!-- <img src="../broken-border.png" alt=""> -->
+    <h2>Калкулатори</h2>
+
+    <div class="calculator-btns">
+        <button>
+            <a href="/bmi">Индекс на телесната маса (BMI)</a>
+        </button>
+        <button>
+            <a href="/bmr">Калориен калкулатор (BMR)</a>
+        </button>
+    </div>
+</section>
+
+{% endblock main %}

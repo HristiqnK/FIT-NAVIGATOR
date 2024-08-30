@@ -1,0 +1,129 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Фит Навигатор - безплатни онайн тренировки на български</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'basicFiles/favicon.png' %}"> 
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div id="mobile-menu">
+                <div class="vissible-content">
+                    <!-- MENU --><button class="burger-menu"><i class='bx bx-menu'></i></button>
+                
+                    <!--homePage--> 
+                    <a href="/home" title="Главна страница"  id="logo">
+                        <img src="https://fitnavigator.pythonanywhere.com/static/basicFiles/logo.png" alt="Фит Навигатор" width="80" height="auto">
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="/account" title="Профил"><i class='bx bx-user-circle user-circle'></i></a>
+                </div>
+
+                <div class="mobile-content">
+                    <a href="/about" class="navButton">За сайта</a>
+            
+                    <a href="/fitNavigator" class="navButton">Създай план</a>
+            
+                    <a href="/onlineShop" class="navButton">Наръчник за упражнения</a>
+             
+                    <a href="/bmi" class="navButton">BMI калкулатор</a>
+
+                    <a href="/bmr" class="navButton">BMR калкулатор</a>
+                    <div></div>
+                </div>
+            </div>
+
+            <div id="desktop-menu">
+                <a href="/home" title="Главна страница">
+                    <img src="https://fitnavigator.pythonanywhere.com/static/basicFiles/logo.png" alt="Фит Навигатор" id="logo" width="80" height="auto">
+                </a>
+    
+                <a href="/about" class="navButton">За сайта</a>
+            
+                <a href="/fitNavigator" class="navButton">Създай план</a>
+        
+                <a href="/onlineShop" class="navButton">Наръчник за упражнения</a>
+                 
+                <a href="/account" title="Профил"><i class='bx bx-user-circle user-circle'></i></a>
+            </div>
+            
+        </nav>
+        {% block header %}
+        {% endblock header %}
+    </header>
+
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-media">
+                <h3>Социални мрежи:</h3>
+
+                <span class="links">
+                    <span><a href="#"><i class='bx bxl-instagram'></a></i></span>
+                    <span><a href="#"><i class='bx bxl-facebook'></a></i></span>
+                    <span><a href="#"><i class='bx bxl-youtube' ></a></i></span>
+                </span>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <h3>Fit Navigator<span class="underline"></span></h3>
+                        <p>
+                            ФитНавигатор е първият български безплатен уебсайт, който предоставя перфектни тренировъчни планове и насочва към правилния начин на хранене.
+                        </p>
+                </div>
+
+                <div class="column">
+                    <h3>За сайта<span class="underline"></span></h3>
+                    <ul>
+                        <li class="row"><a href="/about">Какво представлява?</a></li>
+                        <li class="row"><a href="/about">ЧЗВ</a></li>
+                        <li class="row"><a href="/about">Кои сме ние?</a></li>
+                        <li class="row"><a href="/about">Инструкции за използване на сайта</a></li>
+                    </ul>
+                </div>
+
+                <div class="column">
+                    <h3>Калкулатори<span class="underline"></span></h3>
+                    <ul>
+                        <li class="row"><a href="/bmi">BMI калкулатор</a></li>
+                        <li class="row"><a href="/bmr">BMR калкулатор</a></li>
+                    </ul>
+                </div>
+
+                <div class="column">
+                    <h3>Полезни връзки<span class="underline"></span></h3>
+                    <ul>
+                        <li class="row"><a href="mailto:someone@example.com"><i class='bx bxs-phone-call'></i>Свържете се с нас</a></li>
+                        <li class="row"><a href="/signin"><i class='bx bxs-user-circle'></i>Логин</a></li>
+                        <li class="row"><a href="/signup"><i class='bx bxs-user-plus'></i>Регистрация</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="allRightReserved">© 2024 Copyright: TourFinder.com</div>
+    </footer>
+    <script src="{% static 'basicFiles/dropdown.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Изберете план - Фит Навигатор</title>
+    <script src="{% static 'basicFiles/dropdown.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Calculators/Calculators.css' %}">
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+{% endblock head %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="calculator-heading">Калориен калкулатор (BMR)</h2>  
+        <div class="calculator">
+            <div class="calculator-input">
+                <form method="POST">
+                    {% csrf_token %}
+                    <span>Възраст: </span>
+                    <input type="number" name="age" required>
+
+                    <br>
+
+                    <span>Пол:</span>
+                    <input type="radio" name="gender" value="male" required><label for="male">♂</label>
+                    <input type="radio" name="gender" value="female" required><label for="female">♀</label>
+
+                    <br>
+
+                    <span>Тегло (кг): </span>
+                    <input type="number" name="weight" required>
+
+                    <br>
+
+                    <span>Височина (см): </span>
+                    <input type="number" name="height" required>
+
+                    <br>
+
+                    <input type="submit" value="Изчисли">
+                </form>
+            </div>
+    
+            <div class="calculator-result">
+                <h2>Калории нужни на ден</h2>
+                {% if result %}
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>   
+    </div>
+{% endblock main %}

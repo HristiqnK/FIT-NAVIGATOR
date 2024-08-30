@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'authentication/style.css' %}">
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+    <script type="text/javascript" src="{% static 'authentication/dropdown.js' %}d"></script>
+    <script type="text/javascript" src="{% static 'authentication/script.js' %}"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Регистрация - ФитНавигатор</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.ico' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.png' %}"> <!-- Ако ico не работи -->
+{% endblock head %}
+
+
+{% block main %}
+    <div class="login-frame">
+            
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        </div>
+        {% endfor %}
+
+        <form  method="post" action="/signup">
+        {% csrf_token %}
+        <div class="frame">
+            <video autoplay loop muted>
+                <source src="{% static 'basicFiles/intro_section.mp4' %}" type="video/mp4">
+            </video>
+    
+            <div class="registration-form">
+                <h3>Регистрация</h3>
+                <input type="text" id="username" name="username" placeholder="Потребителско име"> <br>
+                <input type="email" id="email" name="email" placeholder="Имейл"> <br>
+                <input type="password" id="password" name="password" placeholder="Парола"> <i class="fa-regular fa-eye-low-vision"></i> <br>
+                <input type="submit" value="Регистрация">
+            </div>
+        </div>
+        </form>
+        <p class="authentication-switch">Вече имаш акаунт? <a href="/signin">Влизане</a></p>
+    </div>
+{% endblock main %}
+
+

@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Изберете план - Фит Навигатор</title>
+    <script src="{% static 'basicFiles/dropdown.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Calculators/Calculators.css' %}">
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+{% endblock head %}
+
+{% block main %}
+    <div id="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h2 class="calculator-heading">Индекс на телесната маса (BMI)</h2>  
+            <div class="calculator">
+                <div class="calculator-input">
+                    <form action="/action_page.php">
+                        <span>Тегло (кг): </span>
+                        <input type="number" name="weight">
+    
+                        <br>
+    
+                        <span>Височина (см): </span>
+                        <input type="number" name="height">
+    
+                        <br>
+    
+                        <input type="submit" value="Изчисли">
+                    </form>
+                </div>
+        
+                <div class="calculator-result">
+                    <h2>
+                        Вашият BMI:
+                    </h2>
+                    {% if result %}
+                        <p>{{ result }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock main %}

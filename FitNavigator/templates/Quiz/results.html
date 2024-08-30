@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Изберете план - Фит Навигатор</title>
+<script src="{% static 'Quiz/dropdown.js' %}"></script>
+<link rel="stylesheet" href="{% static 'Quiz/results.css' %}">
+<link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+{% endblock head %}
+
+{% block main %}
+
+{% if current_workout %}
+<div class="workout">
+    <div class="tableHeading">Тренировъчна Програма</div>
+    <table>
+        {% for key, value in current_workout.items %}
+            <tr><td>{{ key }}:</td><td>{{ value }}</td></tr>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+    <p>No workouts available or index out of range.</p>
+{% endif %}
+
+{% for item in diet_tips %}
+
+        <div  class="tableHeading">Съвети за диета</div>
+        <table>
+            <tr>
+              <td>Съвет 1:</td>
+              <td>{{ item.Tip1 }}</td>
+            </tr>
+            <tr>
+              <td>Съвет 2:</td>
+              <td>{{ item.Tip2 }}</td>
+            </tr>
+            <tr>
+              <td>Съвет 3:</td>
+              <td>{{ item.Tip3 }}</td>
+            </tr>
+            <tr>
+              <td>Съвет 4:</td>
+              <td>{{ item.Tip4 }}</td>
+            </tr>
+            <tr>
+              <td>Закючение:</td>
+              <td>{{ item.Tip5 }}</td>
+            </tr>
+          </table>
+          
+        {% endfor %}
+
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" name="next_button">Следваща тренировка</button>
+        </form>
+{% endblock main %}

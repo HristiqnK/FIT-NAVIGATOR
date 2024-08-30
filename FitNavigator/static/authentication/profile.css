@@ -1,0 +1,150 @@
+body {
+    background: linear-gradient(#202020, #202020, #994c15);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.profile-stats {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 55vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+}
+
+.profile-stats > * {
+    flex: 1;
+}
+
+.greeting {
+    font-size: 2em;
+    flex: 100%;
+}
+
+.profile-info {
+    width: 60%;
+}
+
+.profile-info > * {
+    margin: 15px 0;
+}
+
+.profile-info input {
+    cursor: pointer;
+    background-color: #2e2e2e;
+    border: none;
+    width: 68%;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding-left: 2%;
+}
+
+.profile-pic {
+    text-align: center;
+    width: 40%;
+}
+
+.profile-pic img{
+    width: 50%; 
+    height: 50%;
+    border-radius: 50%;
+}
+
+.padding {
+    width: 100%;
+    height: 80vh;
+    background-color: transparent;
+}
+
+.saved-workouts {
+    max-width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0 20px;
+}
+
+.saved-workouts h3 {
+    font-size: 2em;
+    flex: 100%;
+    margin-bottom: 20px;
+}
+
+.saved-workouts .saved-workout {
+    margin: 20px 0;
+    background-color: rgba(46, 46, 46);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #c5b3a5;
+}
+
+.saved-workouts .saved-workout:hover {
+    background-color: rgba(46, 46, 46, 0.9);
+    transition: all 0.2s;
+    /* transform: scale(1.05); */
+}
+
+.saved-workouts .saved-workout:hover h4, .saved-workout:hover p {
+    text-decoration: underline;
+}
+
+
+.saved-workouts .saved-workout h4 {
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.saved-workouts .saved-workout p {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.saved-workouts .saved-workout span {
+    position: relative;
+    bottom: 58px;
+    left: 90%;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-stats > * {
+        flex: 100%;
+    }
+
+    .greeting {
+        font-size: 1.5em;
+        flex: 100%;
+    }
+
+    .profile-info {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-info > * {
+        width: 80%;
+        margin: 0;
+    }
+
+    .profile-info input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .profile-pic img{
+        margin: 20px 0;
+    }
+}

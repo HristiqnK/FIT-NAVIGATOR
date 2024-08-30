@@ -1,0 +1,243 @@
+body {
+    background-color: black;
+}
+
+* {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f3f3f3;
+    user-select: none;
+    font-size: 22px;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+main {
+    min-height: calc(100vh - 80px);
+}
+
+header {
+    margin-bottom: 80px;
+}
+
+
+header nav #mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+}
+
+header nav #mobile-menu .vissible-content {
+    background-color: #2e2e2e;
+    border-bottom: 2px solid #E1BB80;
+    height: 80px;
+    width: 100%;
+}
+
+header nav #mobile-menu .vissible-content #logo img {
+    vertical-align: middle;
+}
+
+header nav #mobile-menu .vissible-content .burger-menu {
+    background-color: transparent;
+    border: none;
+}
+
+header nav #mobile-menu .vissible-content .burger-menu i {
+    font-size: 50px;
+}
+
+header nav #mobile-menu .vissible-content .user-circle {
+    font-size: 50px;
+}
+
+header nav #mobile-menu .mobile-content {
+    transition: all ease-in-out 0.5s;
+    max-height: 0;
+}
+
+header nav #desktop-menu .user-circle {
+    font-size: 65px;
+}
+
+header nav #desktop-menu{
+    z-index: 15;
+    position: fixed;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: #2e2e2e;
+
+    align-items: center;
+    justify-content: space-around;
+
+    border-bottom: 1px solid #E1BB80;
+    top: 0;
+}
+
+header nav #desktop-menu .navButton::after {
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #E1BB80;
+    transition: width 0.2s ease-in-out;
+    display: block;
+    /* border-radius: 3px; */
+}
+
+header nav #desktop-menu .navButton:hover::after {
+    width: 100%;
+}
+
+
+/* footer */
+.footer-container {
+    background-color: #302c2c;
+    width: 100%;
+    min-height: 90vh;
+    border-bottom: 1px solid #a04300;
+}
+
+.social-media {
+    width: 100%;
+    height: 60px;
+    background-color: #848C8E;
+}
+
+.social-media a {
+    color: white;
+}
+
+.social-media h3 {
+    width: fit-content;
+    font-size: 25px;
+    line-height: 60px;
+    float: left;
+    margin-left: 40px;
+    font-size: 23px;
+}
+
+.social-media .links {
+    float: right;
+    line-height: 60px;
+    margin-right: 60px;
+    font-size: 2vw;
+}
+
+.column .row a:active {
+    text-decoration: underline;
+}
+
+.social-media .links span {
+    margin: 0 10px;
+}
+
+.column {
+    width: 230px;
+}
+
+.column h3 .underline {
+    width: 100px;
+    height: 2px;
+    background-color: #a5a5a5;
+    display: block;
+}
+
+.column h3 {
+    width: 250px;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.column p {
+    font-size: 20px;
+}
+
+.column li {
+    font-size: 20px;
+    list-style: none;
+    margin: 7px 0;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+    flex-wrap: wrap;
+}
+
+.allRightReserved {
+    text-align: center;
+    background-color: #a04300;
+    /* position: relative; */
+    height: 50px;
+    width: 100%;
+    font-size: 22px;
+    line-height: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    header nav #desktop-menu {
+        display: none;
+    }
+
+    header nav #mobile-menu {
+        display: block;
+    }
+
+    header nav #mobile-menu .vissible-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav #mobile-menu .vissible-content > * {
+        margin: 0 10px;
+    }
+
+    header nav #mobile-menu .mobile-content {
+        display: flex;
+        flex-direction: column;
+        line-height: calc(65vh / 6);
+        text-align: center;
+        background-color: #2e2e2e;
+        overflow: hidden;
+    }
+
+    header nav #mobile-menu .mobile-content .navButton {
+        flex: 1;
+    }
+
+    header nav #mobile-menu .mobile-content .navButton:hover {
+        transition: all ease-in-out 0.3s;
+        background-color: #383838;
+    }
+
+    header nav #mobile-menu .mobile-content div {
+        flex: none;
+        height: 50vh;
+    }
+
+    .social-media .links {
+        margin-right: 10px;
+    }
+
+    .social-media .links span a {
+        vertical-align: middle;
+    }
+}
+
+
+header nav #mobile-menu .mobile-content.opened {
+    max-height: 100vh;
+}

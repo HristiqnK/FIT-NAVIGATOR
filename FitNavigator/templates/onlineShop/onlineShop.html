@@ -1,0 +1,118 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Магазин - ФитНавигатор</title>
+
+        <link rel="stylesheet" href="{% static 'onlineShop/onlineShop.css' %}">
+        <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+
+        <link rel="icon" type="image/x-icon" href="{% static 'basicFiles/favicon.png' %}">
+        <script src="{% static 'onlineShop/exercises-search.js' %}"></script>
+{% endblock head %}
+
+
+{% block main %}
+
+        <h2 class="excercises-heading">Наръчник за упражнения</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Търси упражнение" id="search-bar">
+            <button type="submit" class="submit-btn"> <i class='bx bx-search'></i> </button>
+            <button class="filter-btn">Филтри</button>
+        </div>
+
+        <div class="excercises">
+
+                <div class="excercise" data-exercise="chest">
+                    <a href="/exercise">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/006/417/734/small/woman-doing-push-ups-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt="">
+                        <div class="excercise-gradient"></div>
+                        <p class="excercise-name">Лицеви опори (Push-ups)</p>
+                    </a>
+                </div>
+    
+                <div class="excercise" data-exercise="legs">
+                    <a href="../excercise-squat/excercise-squat.html">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/635/575/small_2x/woman-doing-bodyweight-squats-exercise-flat-illustration-isolated-on-white-background-vector.jpg" alt="">
+                        <div class="excercise-gradient"></div>
+                        <p class="excercise-name">Клекове (Squats)</p>
+                    </a>
+                </div>
+    
+                <div class="excercise" data-exercise="abs">
+                    <a href="../exercise-sit-ups/exercise-sit-ups.html">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/573/035/original/man-doing-sit-ups-exercise-abdominals-exercise-flat-illustration-isolated-on-white-background-vector.jpg" alt="">
+                        <div class="excercise-gradient"></div>
+                        <p class="excercise-name">Коремни преси (Sit-ups)</p>
+                    </a>
+                </div>
+
+                <div class="excercise" data-exercise="back">
+                    <a href="../excercise-chin-ups/excercise-chin-ups.html">
+                        <img src="https://cdn.vectorstock.com/i/500p/61/60/woman-doing-pull-up-exercise-vector-47486160.jpg" alt="">
+                        <div class="excercise-gradient"></div>
+                        <p class="excercise-name">Набирания (Pull-ups)</p>
+                    </a>
+                </div>
+    
+                <div class="excercise" data-exercise="legs">
+                    <a href="../excercise-deadlift/excercise-deadlift.html">
+                        <img src="https://static.vecteezy.com/system/resources/previews/006/417/721/non_2x/man-doing-sumo-barbell-deadlifts-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt="">
+                        <div class="excercise-gradient"></div>
+                        <p class="excercise-name">Мъртва тяга (Deadlift)</p>
+                    </a>
+                </div>
+    
+                <div class="excercise" data-exercise="abs">
+                    <a href="../excercise-plank/excercise-plank.html">
+                        <img src="https://static.vecteezy.com/system/resources/previews/027/787/499/original/woman-doing-forearm-plank-exercise-flat-illustration-isolated-on-white-background-vector.jpg" alt="">
+                        <div class="excercise-gradient"></div>
+                        <p class="excercise-name">Планк (Plank)</p>
+                    </a>
+                </div>
+
+                <div id="no-results" style="display: none; text-align: center; margin-top: 20px;">
+                    Няма резултати
+                </div>
+
+        </div>
+
+ <div class="filter-window">
+        <div class="filter-close-btn">
+            <i class='bx bx-x bx-lg'></i>
+        </div>
+        <div class="keywords">
+            <span class="keyword" data-exercise="abs">
+                корем
+                <div class="keyword-close-btn"><i class='bx bx-x'></i></div>
+            </span>
+
+            <span class="keyword" data-exercise="back">
+                гръб
+                <div class="keyword-close-btn"><i class='bx bx-x'></i></div>
+            </span>
+
+            <span class="keyword" data-exercise="chest">
+                гръден кош
+                <div class="keyword-close-btn"><i class='bx bx-x'></i></div>
+            </span>
+
+            <span class="keyword" data-exercise="chest">
+                бицепс
+                <div class="keyword-close-btn"><i class='bx bx-x'></i></div>
+            </span>
+
+            <span class="keyword" data-exercise="legs">
+                бедра и задни части
+                <div class="keyword-close-btn"><i class='bx bx-x'></i></div>
+            </span>
+        </div>
+    </div>
+    <span class="filter-background"></span>
+    <script src="{% static 'onlineShop/exercise-filter.js' %}"></script> 
+{% endblock main %}
+
+    
+
